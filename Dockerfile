@@ -39,4 +39,6 @@ VOLUME ["/config"]
 
 #ENTRYPOINT ["/usr/bin/rclone"]
 
+COPY entry.sh /entry.sh
+
 CMD ["/entry.sh"]
