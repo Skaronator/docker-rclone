@@ -1,5 +1,6 @@
 FROM alpine:latest
-MAINTAINER Skaronator <Skaro@Skaronator.com>
+
+LABEL maintainer="Skaronator"
 
 
 ARG ARCH="amd64"
@@ -37,8 +38,10 @@ USER rclone
 
 VOLUME ["/config"]
 
-#ENTRYPOINT ["/usr/bin/rclone"]
 
-COPY entry.sh /entry.sh
 
-CMD ["/entry.sh"]
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+
+CMD ["--help"]
