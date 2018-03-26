@@ -40,8 +40,8 @@ VOLUME ["/config"]
 
 
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
 
 CMD ["--help"]
