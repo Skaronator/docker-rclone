@@ -37,6 +37,6 @@ USER rclone
 
 VOLUME ["/config"]
 
-ENTRYPOINT ["/usr/bin/rclone"]
+#ENTRYPOINT ["/usr/bin/rclone"]
 
 CMD ["/entry.sh"]
