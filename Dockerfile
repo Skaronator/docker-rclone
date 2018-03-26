@@ -15,6 +15,7 @@ ENV INIT_RUN="false"
 
 
 
+
 RUN \
   apk update && \
   apk add --no-cache ca-certificates fuse wget
@@ -34,12 +35,12 @@ RUN \
   addgroup rclone && \
   adduser -h /config -s /bin/ash -G rclone -D rclone
 	
-USER rclone
-
 VOLUME ["/config"]
-
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
+
+
+USER rclone
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
