@@ -16,12 +16,16 @@ ENV INIT_RUN=false
 
 RUN \
   apk update && \
-  apk add --no-cache ca-certificates fuse wget && \
+  apk add --no-cache ca-certificates fuse wget
+
+RUN \
   cd /tmp && \
   wget -q http://downloads.rclone.org/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip && \
   unzip /tmp/rclone-${RCLONE_VERSION}-linux-${ARCH}.zip && \
-  mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin && \
-  rm -rf /tmp/rclone* && \
+  mv /tmp/rclone-*-linux-${ARCH}/rclone /usr/bin
+
+RUN \
+  rm -rf /tmp/* && \
   rm -rf /var/cache/apk/*
 
 # create user and group
