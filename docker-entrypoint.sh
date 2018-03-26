@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Starting rclone for Docker by Skaronator..."
 
@@ -15,7 +15,7 @@ echo "Um: $CRON_SCHEDULE"
 echo "Um: $INIT_RUN"
 
 if [ -n "${INIT_RUN}" ]; then
-  echo "=> Create a backup on the startup"
+  echo "=> Start rclone on startup!"
   /run.sh
 fi
 

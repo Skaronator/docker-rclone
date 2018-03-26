@@ -36,6 +36,8 @@ RUN \
 VOLUME ["/config"]
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY run.sh /run.sh
+
 RUN chmod +x /docker-entrypoint.sh
 
 
