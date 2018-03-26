@@ -7,7 +7,7 @@ then
     echo "No config file found! Check Readme how to generate a config file!"
 fi
 
-echo ${CRON_SCHEDULE}
+echo $CRON_SCHEDULE
 
 
 # start cron
